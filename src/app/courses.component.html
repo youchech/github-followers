@@ -1,0 +1,27 @@
+<div class="container">
+    <ul class="list-group">
+        <li class="list-group-item">title: {{course.titre | uppercase}}</li>
+        <li class="list-group-item">avis: {{course.avis | number:'2.2-2'}}</li>
+        <li class="list-group-item">participants: {{course.participants}}</li>
+        <li class="list-group-item">prix: {{course.prix | currency:'MAD':'symbol'}}</li>
+        <li class="list-group-item">publicationDate: {{course.publicationDate | date:'shortDate'}}</li>
+    </ul>
+</div>
+
+<h1 [style.color]="isActive ? 'blue' : 'red'">{{ title }}</h1>
+
+<input [(ngModel)]="email" type="text" (keyup.enter)="onKeyUp()">
+<p>{{ email }}</p>
+
+
+<img [src]="image" alt="{{ title }}">
+
+<div (click)="onClickDiv()">
+    <button (click)="onClick()" class="btn btn-primary" [class.active]="isActive">
+        Mon button
+    </button>
+</div>
+
+<ul>
+    <li *ngFor="let course of courses">{{ course }}</li>
+</ul>
